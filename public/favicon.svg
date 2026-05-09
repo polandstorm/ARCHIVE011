@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Red Star -->
+  <path fill="#c82323" d="M50 5L61.8 38.2H95L68.2 58.8L78.1 92L50 71.5L21.9 92L31.8 58.8L5 38.2H38.2z"/>
+  <!-- Gold Eagle Silhouette (simplified for icon) -->
+  <path fill="#ffd700" d="M50 35c-2-2-5-1-5 2l2 8h6l2-8c0-3-3-4-5-2zm-12 10c-5-2-10 2-10 8s5 15 10 18v-5c-3-2-5-6-5-10s2-8 5-11zm24 0c5-2 10 2 10 8s-5 15-10 18v-5c3-2 5-6 5-10s-2-8-5-11z" opacity="0.8"/>
+</svg>

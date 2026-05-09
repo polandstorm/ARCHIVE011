@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-phosphor: #00ff41;
+  --color-soviet-red: #c82323;
+  --color-terminal-bg: #0d0d0d;
+  --color-panel-bg: #1a1a1a;
+  --color-border-gray: #333;
+}
+
+@layer base {
+  body {
+    @apply bg-terminal-bg text-phosphor font-mono min-h-screen overflow-hidden;
+    animation: flicker 0.1s infinite;
+  }
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@layer components {
+  .crt-scanline {
+    @apply fixed inset-0 pointer-events-none z-[9999];
+    background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.1) 50%), 
+                linear-gradient(90deg, rgba(255,0,0,0.02), rgba(0,255,0,0.01), rgba(0,0,255,0.02));
+    background-size: 100% 3px, 3px 100%;
+  }
+
+  .scanline-beam {
+    @apply fixed left-0 w-full h-[150px] pointer-events-none z-[10000];
+    background: linear-gradient(to bottom, transparent, rgba(0, 255, 65, 0.05), transparent);
+    animation: scanline-move 8s linear infinite;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+  }
+
+  .soviet-header {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    @apply uppercase tracking-tighter leading-[0.8];
+  }
+
+  .brutalist-border {
+    @apply border-4 border-phosphor shadow-[4px_4px_0px_#c82323];
+  }
+
+  .directory-btn {
+    @apply border-4 border-phosphor shadow-[4px_4px_0px_#c82323] p-5 flex flex-col transition-all 
+           active:translate-x-1 active:translate-y-1 active:shadow-none 
+           hover:bg-phosphor hover:text-black hover:cursor-pointer;
+  }
+
+  .status-light {
+    @apply w-[10px] h-[10px] rounded-full inline-block mr-2 bg-phosphor shadow-[0_0_5px_#00ff41];
+  }
+
+  .flicker {
+    animation: flicker 0.15s infinite;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.93; }
+    20% { opacity: 0.98; }
+    25% { opacity: 0.95; }
+    30% { opacity: 0.9; }
+    35% { opacity: 0.91; }
+    40% { opacity: 0.98; }
+    45% { opacity: 0.95; }
+    50% { opacity: 0.88; }
+    55% { opacity: 0.95; }
+    60% { opacity: 0.98; }
+    65% { opacity: 0.9; }
+    70% { opacity: 0.92; }
+    75% { opacity: 0.99; }
+    80% { opacity: 0.95; }
+    85% { opacity: 0.9; }
+    90% { opacity: 0.93; }
+    95% { opacity: 0.98; }
+    100% { opacity: 0.97; }
+  }
+}

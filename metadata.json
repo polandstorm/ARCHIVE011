@@ -1,0 +1,6 @@
+{
+  "name": "ARKHIV-01: Terminal de Comando e Núcleo de Inteligência",
+  "description": "Terminal brutalista multifuncional que integra gestão de servidores (OPERATIONS) e um Núcleo de Inteligência hierárquico (SECOND BRAIN) com estética war room.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
